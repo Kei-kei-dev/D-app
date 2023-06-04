@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../models/models.dart';
 import '../screens/chat/chat_screen.dart';
 import '../screens/home/home_screen.dart';
 import '../screens/matches/matches_screen.dart';
-import '../screens/user/user_screen.dart';
+import '../screens/users/users_screen.dart';
 
 class AppRouter {
   static Route onGenerateRoute(RouteSettings settings) {
@@ -17,7 +18,7 @@ class AppRouter {
       case MatchesScreen.routeName:
         return MatchesScreen.route();
       case UserScreen.routeName:
-        return UserScreen.route();
+        return UserScreen.route(user: settings.arguments as User);
       case ChatScreen.routeName:
         return ChatScreen.route();
       default:
