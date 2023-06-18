@@ -1,4 +1,3 @@
-import 'package:d_app/screens/users/users_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:d_app/config/app_router.dart';
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
       child: const MaterialApp(
         title: 'Flutter Demo',
         onGenerateRoute: AppRouter.onGenerateRoute,
-        initialRoute: HomeScreen.routeName,
+        initialRoute: OnboardingScreen.routeName,
       ),
     );
   }
