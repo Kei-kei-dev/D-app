@@ -4,6 +4,7 @@ import '../models/models.dart';
 import '../screens/chat/chat_screen.dart';
 import '../screens/home/home_screen.dart';
 import '../screens/matches/matches_screen.dart';
+import '../screens/onboarding/onboarding_screen.dart';
 import '../screens/users/users_screen.dart';
 
 class AppRouter {
@@ -17,6 +18,8 @@ class AppRouter {
         return HomeScreen.route();
       case MatchesScreen.routeName:
         return MatchesScreen.route();
+      case OnboardingScreen.routeName:
+        return OnboardingScreen.route();
       case UserScreen.routeName:
         return UserScreen.route(user: settings.arguments as User);
       case ChatScreen.routeName:
