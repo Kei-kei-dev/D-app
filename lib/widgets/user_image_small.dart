@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class UserImageSmall extends StatelessWidget {
-  const UserImageSmall({
-    super.key,
-    required this.imageUrl,
-  });
+  final String url;
+  final double height;
+  final double width;
 
-  final String imageUrl;
+  const UserImageSmall(
+      {super.key, required this.url, this.height = 60, this.width = 60});
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +15,11 @@ class UserImageSmall extends StatelessWidget {
         top: 8,
         right: 8,
       ),
-      height: 60,
-      width: 60,
+      height: height,
+      width: width,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: NetworkImage(imageUrl),
+          image: NetworkImage(url),
           fit: BoxFit.cover,
         ),
         borderRadius: BorderRadius.circular(5.0),

@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
-  final TabController tabController;
-  final String text;
+  final String hint;
+  final TextEditingController controller;
 
   const CustomTextField(
-      {super.key, required this.tabController, required this.text});
+      {super.key, required this.hint, required this.controller});
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
       decoration: InputDecoration(
         filled: true,
         fillColor: Colors.white,
-        hintText: text,
+        hintText: hint,
         contentPadding: const EdgeInsets.only(bottom: 5.0, top: 12.5),
         focusedBorder:
             OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
