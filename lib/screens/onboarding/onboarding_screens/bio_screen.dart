@@ -1,5 +1,5 @@
 import 'package:d_app/screens/onboarding/widgets/custom_button.dart';
-import 'package:d_app/screens/onboarding/widgets/custom_text_container.dart';
+import 'package:d_app/widgets/custom_text_container.dart';
 import 'package:d_app/screens/onboarding/widgets/custom_text_field.dart';
 import 'package:d_app/screens/onboarding/widgets/custom_text_header.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +12,7 @@ class Biography extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = TextEditingController();
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 50.0),
       child: Column(
@@ -20,12 +21,13 @@ class Biography extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomTextHeader(
-                  tabController: tabController, text: '自己紹介をして下さい'),
+              CustomTextHeader(text: '自己紹介をして下さい'),
               CustomTextField(
-                  tabController: tabController, text: 'ENTER YOUR bio'),
+                hint: 'ENTER YOUR bio',
+                controller: controller,
+              ),
               SizedBox(height: 100),
-              CustomTextHeader(tabController: tabController, text: 'あなたの趣味は？'),
+              CustomTextHeader(text: 'あなたの趣味は？'),
               Row(
                 children: [
                   CustomTextContainer(tabController: tabController, text: '音楽'),
